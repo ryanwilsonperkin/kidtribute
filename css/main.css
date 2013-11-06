@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/font/OpenSans-Regular.ttf');
+}
+
+body {
+  font-family: 'Open Sans', 'Arial';
+}
+
+#sidebar {
+  padding: 5px;
+  background-color: #EDF0F3;
+}
+
+#content {
+}
