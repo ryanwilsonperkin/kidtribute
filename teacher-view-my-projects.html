@@ -35,9 +35,29 @@
       <div class="row">
         <div id="sidebar" class="col-md-3">
           <ul class="nav nav-pills nav-stacked">
-            <li><a href="create-project.html">Create a project</a></li>
-            <li><a href="teacher-view-my-projects.html">View  my projects</a></li>
-            <li><a href="#">Edit projects</a></li>
+            <li><a href="/">Home</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                Browse projects <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="browse-schools.html">By school</a></li>
+                <li><a href="browse-categories.html">By category</a></li>
+              </ul>
+            </li>
+            <li id="CreateProject"><a href="create-project.html">Create a project</a></li>
+            <li id="TeacherViewProjects"><a href="teacher-view-my-projects.html">View  my projects</a></li>
+            <li id="PrincipalViewProjects"><a href="principal-view-my-projects.html">Manage teacher projects <span class="badge">3</span></a></li>
+            <li>
+              <form class="navbar-form" role="search">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search projects">
+                    <span class="input-group-addon"><a href="search-page.html"><i class="fa fa-search"></i></a></span>
+                  </div>
+                </div>
+              </form>
+            </li>
           </ul>
         </div>
         <div id="content" class="col-md-9">
