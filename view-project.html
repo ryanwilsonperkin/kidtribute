@@ -84,25 +84,27 @@
               </a>
               <div class="modal fade" id="donateModal" tabindex=-1 role="dialog" aria-labelledby="donateModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                      <h4 class="modal-title" id="donateModalLabel">Donate now!</h4>
+                  <form role="form" action="donation-received.html">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="donateModalLabel">Donate now!</h4>
+                      </div>
+                      <div class="modal-body">
+                        <form role="form">
+                          <div class="alert alert-info">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <p>Donations are managed through <a href="http://canadahelps.org">CanadaHelps.org</a>.</p> 
+                            <p>There are no refunds on donations.</p>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success">Donate</button>
+                      </div>
                     </div>
-                    <div class="modal-body">
-                      <form role="form">
-                        <div class="alert alert-info">
-                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                          <p>Donations are managed through <a href="http://canadahelps.org">CanadaHelps.org</a>.</p> 
-                          <p>There are no refunds on donations.</p>
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-success">Donate</button>
-                    </div>
-                  </div>
+                  </form>
                 </div>
               </div>
             </div>
