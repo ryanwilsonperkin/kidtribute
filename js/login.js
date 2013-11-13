@@ -25,6 +25,8 @@ $(document).ready(function() {
         $('#TeacherViewProjects').addClass('hidden');
         $('#PrincipalViewProjects').addClass('hidden');
     }
+
+    $('#LoginButton').bind('click', loginButtonClick);
 });
 
 // Verifies the credentials given on the login screen. Returns true if a match
@@ -50,9 +52,9 @@ var verifyCredentials = function () {
 // Is called upon the user pressing the login button.
 var loginButtonClick = function () {
     if (verifyCredentials()) {
-
+        document.location.href = 'index.html';
     } else {
-        $('#LoginError').addClass('hidden');
+        $('#LoginError').removeClass('hidden');
     }
 }
 
