@@ -63,7 +63,7 @@ var getCurrentUser = function () {
 
 // Is called upon the user pressing the logout button.
 var logout = function () {
-    $.removeCookie('KidTributeLogin');
+    $.removeCookie('KidTributeLogin', {path: '/'});
     $('#Logout').addClass('hidden');
     $('#Username').addClass('hidden');
     $('#Login').removeClass('hidden');
@@ -72,4 +72,6 @@ var logout = function () {
     $('#CreateProject').addClass('hidden');
     $('#TeacherViewProjects').addClass('hidden');
     $('#PrincipalViewProjects').addClass('hidden');
+
+    document.location.href = 'index.html';
 }
