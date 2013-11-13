@@ -24,8 +24,9 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="login.html">Login</a></li>
-            <li class="hidden"><a href="#">Logout</a></li>
+            <li id="Login"><a href="login.html">Login</a></li>
+            <li id="Username"><a class="disabled">Logged in as blank</a></li>
+            <li id="Logout" class="hidden"><a href="#" onclick="logout();">Logout</a></li>
           </ul>
         </div>
       </div>
@@ -37,6 +38,7 @@
           <h1>Login</h1>
           <form role="form">
             <div class="form-group">
+              <p id="LoginError" class="hidden" style="background-color: red;">Wrong username/password.</p>
               <label for="username">Username</label>
               <input type="text" class="form-control" id="username" placeholder="Username">
             </div>
@@ -53,12 +55,14 @@
               <a href="#">Forgot your password?</a> | 
               <a href="signup-page.html">Sign up</a>
             </div>
-            <button type="submit" class="btn btn-default">Login</button>
+            <p id="LoginButton" style="background-color: lightblue;">Login</p>
           </form>
         </div>
       </div>
     </div>
     <script rel="text/javascript" src="js/jquery-1.10.1.min.js"></script>
     <script rel="text/javascript" src="js/bootstrap.min.js"></script>
+    <script rel="text/javascript" src="js/jquery.cookie.js"></script>
+    <script rel="text/javascript" src="js/login.js"></script>
   </body>
 </html>
