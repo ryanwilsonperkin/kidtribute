@@ -5,9 +5,25 @@ var users = [
 
 // Checks whether the user is logged in or not on the page load.
 $(document).ready(function() {
-    if ($.cookie('KidTributeLogin') != undefined) {
+    if (getCurrentUser() != undefined) {
         $('#Logout').removeClass('hidden');
         $('#Login').addClass('hidden');
+        $('#Username').removeClass('hidden');
+        $('#Username').children().html('Logged in as ' + getCurrentUser());
+
+        // Hide the principal stuff if this is the teacher
+        if (getCurrentUser() == 'teacher')
+            $('#PrincipalViewProjects').addClass('hidden');
+    }
+    else {
+        $('#Logout').addClass('hidden');
+        $('#Username').addClass('hidden');
+        $('#Login').removeClass('hidden');
+
+        // Hide the extra sidebar stuff.
+        $('#CreateProject').addClass('hidden');
+        $('#TeacherViewProjects').addClass('hidden');
+        $('#PrincipalViewProjects').addClass('hidden');
     }
 });
 
@@ -31,8 +47,29 @@ var verifyCredentials = function () {
     return false;
 }
 
+// Is called upon the user pressing the login button.
+var loginButtonClick = function () {
+    if (verifyCredentials()) {
+
+    } else {
+        $('#LoginError').addClass('hidden');
+    }
+}
+
+// Gets the username of the current user, or undefined if not logged in.
+var getCurrentUser = function () {
+    return $.cookie('KidTributeLogin');
+}
+
+// Is called upon the user pressing the logout button.
 var logout = function () {
     $.removeCookie('KidTributeLogin');
     $('#Logout').addClass('hidden');
+    $('#Username').addClass('hidden');
     $('#Login').removeClass('hidden');
+
+    // Hide the extra sidebar stuff.
+    $('#CreateProject').addClass('hidden');
+    $('#TeacherViewProjects').addClass('hidden');
+    $('#PrincipalViewProjects').addClass('hidden');
 }
