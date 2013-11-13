@@ -25,8 +25,6 @@ $(document).ready(function() {
         $('#TeacherViewProjects').addClass('hidden');
         $('#PrincipalViewProjects').addClass('hidden');
     }
-
-    $('#LoginButton').bind('click', loginButtonClick);
 });
 
 // Verifies the credentials given on the login screen. Returns true if a match
