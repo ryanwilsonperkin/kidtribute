@@ -1,7 +1,6 @@
 <?php
 ini_set("display_errors","On");
-class ResponseObject
-{
+class ResponseObject {
   public function __construct($status, $statusMessage, $errors, $results) {
     $this->status = $status;
     $this->statusMessage = $statusMessage;
@@ -10,8 +9,7 @@ class ResponseObject
   }
 }
 
-class ProjectObject
-{
+class ProjectObject {
   public function __construct($id, $schoolId, $userId, $userEmail, $title, $description, $startDate, $endDate, $category, $isApproved, $imageUrl=null) {
     $this->id = $id;
     $this->schoolId = $schoolId;
@@ -26,8 +24,7 @@ class ProjectObject
   }
 }
 
-class SchoolObject
-{
+class SchoolObject {
   public function __construct($id, $name, $type, $schoolBoard, $streetAddress, $city, $postalCode, $donationUrl) {
     $this->id = $id;
     $this->name = $name;
@@ -40,8 +37,7 @@ class SchoolObject
   }
 }
 
-class UserObject
-{
+class UserObject {
   public function __construct($id, $schoolId, $userType, $username, $password, $name, $title, $email, $skills, $isVetted, $bio, $associatedProjects, $imageUrl=null) {
     $this->id = $id;
     $this->schoolId = $schoolId;
