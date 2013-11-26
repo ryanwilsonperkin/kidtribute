@@ -26,6 +26,20 @@ class ProjectObject
   }
 }
 
+class SchoolObject
+{
+  public function __construct($id, $name, $type, $schoolBoard, $streetAddress, $city, $postalCode, $donationUrl) {
+    $this->id = $id;
+    $this->name = $name;
+    $this->type = $type;
+    $this->schoolBoard = $schoolBoard;
+    $this->streetAddress = $streetAddress;
+    $this->city = $city;
+    $this->postalCode = $postalCode;
+    $this->donationUrl = $donationUrl;
+  }
+}
+
 class UserObject
 {
   public function __construct($id, $schoolId, $userType, $username, $password, $name, $title, $email, $skills, $isVetted, $bio, $associatedProjects, $imageUrl=null) {
