@@ -1,5 +1,4 @@
 <?php
-ini_set("display_errors","On");
 class ResponseObject {
   public function __construct($status, $statusMessage, $errors, $results) {
     $this->status = $status;
