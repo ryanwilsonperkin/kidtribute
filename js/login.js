@@ -3,6 +3,10 @@ var users = [
     ['principal', 'password']
 ];
 
+function handleLogin (data) {
+    console.log(data);
+};
+
 // Checks whether the user is logged in or not on the page load.
 $(document).ready(function() {
     if (getCurrentUser() != undefined) {
@@ -29,9 +33,6 @@ $(document).ready(function() {
     Login('name', 'password', handleLogin);
 });
 
-var handleLogin = function (data) {
-    console.log(data);
-};
 
 // Verifies the credentials given on the login screen. Returns true if a match
 // was found for the given credentials, false otherwise. In the case of a

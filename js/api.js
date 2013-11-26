@@ -54,7 +54,8 @@ function Login(username, password, success, error) {
                 },
         },
         dataType: 'json',
-        success: success,
+        success: success, 
+        error: error
     });
 }
 
