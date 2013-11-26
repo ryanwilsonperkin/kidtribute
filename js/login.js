@@ -1,12 +1,3 @@
-var users = [
-    ['teacher', 'password'],
-    ['principal', 'password']
-];
-
-function handleLogin (data) {
-    console.log(data);
-};
-
 // Checks whether the user is logged in or not on the page load.
 $(document).ready(function() {
     if (getCurrentUser() != undefined) {
@@ -29,38 +20,38 @@ $(document).ready(function() {
         $('#TeacherViewProjects').addClass('hidden');
         $('#PrincipalViewProjects').addClass('hidden');
     }
-
-    Login('name', 'password', handleLogin);
 });
 
+// The callback for a successful call to the Login backend service.
+// If the login was successful, sets the 'KidTributeLogin' cookie to
+// be a JSON version of the User object. If unsuccessful, makes the wrong
+// username/password warning message visible to the user.
+var loginSuccess = function (data) {
+    var user = data.result;
 
-// Verifies the credentials given on the login screen. Returns true if a match
-// was found for the given credentials, false otherwise. In the case of a
-// successful login, the 'kidTributeLogin' cookie is set to the username.
+    // Check whether the user was found in the database.
+    if (user.id == null) {
+        $('#LoginError').removeClass('hidden');
+    }
+    else {
+        // Create the cookie if the user object was returned successfully.
+        $.removeCookie('KidTributeLogin');
+        $.cookie('KidTributeLogin', JSON.stringify(user), {path: '/', expires: 7});
+    }
+}
+
+// Callback for an unsuccessful call to the Login backend service.
+// TODO: Currently a stub, we should update this with an appropriate message.
+var loginFailure = function (data) {
+    console.log('ERROR: Problem when calling the Login service.')
+}
+
+// Called when the user presses the Login button on the Login page.
+// Verifies the credentials given on the login screen.
 var verifyCredentials = function () {
     var username = $('#username').val();
     var password = $('#password').val();
-
-    // Check the list of users for a match.
-    for (var i = 0; i < users.length; i++) {
-        if (username == users[i][0] && password == users[i][1]) {
-            $.removeCookie('KidTributeLogin');
-            $.cookie('KidTributeLogin', username, {path: '/', expires: 7});
-            return true;
-        }
-    }
-
-    // No match was found.
-    return false;
-}
-
-// Is called upon the user pressing the login button.
-var loginButtonClick = function () {
-    if (verifyCredentials()) {
-        document.location.href = 'index.html';
-    } else {
-        $('#LoginError').removeClass('hidden');
-    }
+    Login(username, password, loginSuccess, loginFailure);
 }
 
 // Gets the username of the current user, or undefined if not logged in.
