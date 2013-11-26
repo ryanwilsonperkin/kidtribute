@@ -25,7 +25,13 @@ $(document).ready(function() {
         $('#TeacherViewProjects').addClass('hidden');
         $('#PrincipalViewProjects').addClass('hidden');
     }
+
+    Login('name', 'password', handleLogin);
 });
+
+var handleLogin = function (data) {
+    console.log(data);
+};
 
 // Verifies the credentials given on the login screen. Returns true if a match
 // was found for the given credentials, false otherwise. In the case of a

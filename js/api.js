@@ -39,8 +39,21 @@ function SchoolObject() {
   this.donationUrl = donationUrl;
 }
 
-function Login(username, password) {
-
+function Login(username, password, success, error) {
+    $.ajax({
+        url: 'Retrieval.php',
+        type: 'POST',
+        data: {
+                key: API_KEY,
+                functionName: "Login",
+                parameters: {
+                    username: username,
+                    password: password
+                },
+        },
+        dataType: 'json',
+        success: success,
+    });
 }
 
 function GetUser(userId) {
