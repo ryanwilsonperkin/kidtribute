@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
 	$function_name = $_GET['functionName'];
 	$parameters = json_decode($_GET['parameters']);
 }
-elseif($_SERVER['REQUEST_METHOD'] == 'PUT')
+elseif($_SERVER['REQUEST_METHOD'] == 'POST')
 {
 	parse_str(file_get_contents("php://input"),$post_vars);
 	$function_name = $post_vars['functionName'];
