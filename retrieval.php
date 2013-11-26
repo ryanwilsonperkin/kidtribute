@@ -74,6 +74,19 @@ function project_object_factory() {
   );
 }
 
+function school_object_factory() {
+  return new SchoolObject(
+    1234,
+    "Priory Park",
+    "Elementary",
+    "Upper Grand District School Board",
+    "123 Fake St.",
+    "Guelph",
+    "H0H 0H0",
+    "http://example.com"
+  );
+}
+
 function user_object_factory() {
   return new UserObject(
     1337,
