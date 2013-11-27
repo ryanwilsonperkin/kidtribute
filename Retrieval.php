@@ -22,9 +22,10 @@ elseif($_SERVER['REQUEST_METHOD'] == 'POST')
 }
 else
 {
-	$put_vars = json_decode(file_get_contents("php://input"));
-	$function_name = $put_vars['functionName'];
-	$parameters = $put_vars['parameters'];
+	$put = array();
+	parse_str(file_get_contents('php://input'), $put);
+	$function_name = $put['functionName'];
+	$parameters = $put['parameters'];
 }
 
 switch ($function_name)
