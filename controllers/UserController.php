@@ -5,8 +5,6 @@ include_once dirname(__FILE__) . '/../DBobjects/UserDBObject.php';
 function controller_Login($email, $password){
     //get a user from the database via their email address
     $user_model = new user_model();
-
-    echo $email . "---" . $password;
     $user_object = $user_model->load_from_email($email);
 
     //verify the passwords match
