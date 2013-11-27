@@ -3,8 +3,8 @@ function getProjectSuccess(data) {
     $('#title').text(data.results.title);
     $('#userEmail').text('Contact: ' + data.results.userEmail);
     $('#category').text(data.results.category);
-    $('#startDate').text(data.results.startDate);
-    $('#endDate').text(data.results.endDate);
+    $('#startDate').text('Start date: ' + data.results.startDate);
+    $('#endDate').text('End date: ' + data.results.endDate);
     $('#description').text(data.results.description);
 }
 
