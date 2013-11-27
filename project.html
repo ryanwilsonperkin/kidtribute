@@ -80,17 +80,42 @@
         </div>
         <div id="content" class="col-md-9">
           <h1 id="title"></h1>
-          <span class="label label-default" id="category"></span>
-          <p><strong id="userEmail"></strong></p>
+          <hr />
           <p>
-            <span class="glyphicon glyphicon-calendar"></span>
-            <strong id="startDate"></strong>
+            <span class="glyphicon glyphicon-tag"></span>
+            <strong>Tags: </strong>
+            <span class="label label-info" id="category"></span>
           </p>
-          <p>
-            <span class="glyphicon glyphicon-calendar"></span>
-            <strong id="endDate"></strong>
-          </p>
-          <p id="description"></p> 
+          <div class="row">
+            <div class="col-sm-6">
+              <h4>Project Information</h4>
+              <p>
+                <span class="glyphicon glyphicon-envelope"></span>
+                <strong>Contact: </strong>
+                <a id="userEmail"></a>
+              </p>
+              <p>
+                <span class="glyphicon glyphicon-calendar"></span>
+                <strong>Start date: </strong>
+                <span id="startDate"></span>
+              </p>
+              <p>
+                <span class="glyphicon glyphicon-calendar"></span>
+                <strong>End date: </strong>
+                <span id="endDate"></span>
+              </p>
+              <br />
+              <a href="mailto:teacher@example.com" class="btn btn-success">Get Involved!</a>
+            </div>
+            <div class="col-sm-6">
+              <h4>Description</h4>
+              <p id="description"></p> 
+            </div>
+          </div>
+          <hr />
+          <a href="http://facebook.com"><span class="fa fa-facebook-square fa-2x"></span></a>
+          <a href="http://twitter.com"><span class="fa fa-twitter-square fa-2x"></span></a>
+          <a href="http://plus.google.com"><span class="fa fa-google-plus-square fa-2x"></span></a>
         </div>
       </div>
     </div>

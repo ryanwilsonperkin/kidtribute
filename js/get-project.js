@@ -4,10 +4,10 @@ function getProjectSuccess(data) {
     }
     else {
         $('#title').text(data.results.title);
-        $('#userEmail').text('Contact: ' + data.results.userEmail);
+        $('#userEmail').text(data.results.userEmail).attr('href', 'mailto:' + data.results.userEmail);
         $('#category').text(data.results.category);
-        $('#startDate').text('Start date: ' + data.results.startDate);
-        $('#endDate').text('End date: ' + data.results.endDate);
+        $('#startDate').text(data.results.startDate);
+        $('#endDate').text(data.results.endDate);
         $('#description').text(data.results.description);
     }
 }
