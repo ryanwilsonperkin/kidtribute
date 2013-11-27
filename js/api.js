@@ -197,7 +197,7 @@ function AddCommMember(projectId, userId, success, error) {
 function ApproveProject(projectId, success, error) {
     $.ajax({
         url: 'Retrieval.php',
-        type: 'POST',
+        type: 'PUT',
         data: { 
             key: API_KEY,
             functionName: "ApproveProject",
