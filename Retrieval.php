@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
 	$function_name = $_GET['functionName'];
 	$parameters = json_decode($_GET['parameters']);
 }
-elseif($_SERVER['REQUEST_METHOD'] == 'GET')
+elseif($_SERVER['REQUEST_METHOD'] == 'POST')
 {
 	$function_name = $_POST['functionName'];
 	$parameters = json_decode($_POST['parameters']);
