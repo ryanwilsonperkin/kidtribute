@@ -33,8 +33,9 @@ var createProjectSubmit = function () {
 }
 
 // Callback for an successful call to the CreateProject backend service.
-// TODO: Currently a stub, should redirect to the view project page for the new project.
+// Redirects to the view project page passing the new project ID as a URL parameter.
 var createProjectSuccess = function (data) {
+    document.location.href = 'project.html?id=' + data.results.projectId;
 }
 
 // Callback for an unsuccessful call to the CreateProject backend service.
