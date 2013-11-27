@@ -109,12 +109,12 @@ class project_model extends db
 			$project->startDate = "null";
 		
 		if ($project->endDate == null)
-			$project->endDate = "null";
+			$project->endDate = "2055-10-10";
 		
 		if ($project->imageUrl == null)
 			$project->imageUrl = "null";
 		if ($project->category_id == null)
-			$project->category_id = "null";
+			$project->category_id = 1;
 		
 		$query = "INSERT INTO `Projects` (school_id, teacher_id, category_id, title, description, startDate, endDate, imageUrl, approved) VALUES ($project->school_id, $project->teacher_id, $project->category_id, '$project->title', '$project->description', CAST ('$project->startDate' AS DATE), CAST('$project->endDate' AS DATE), '$project->imageUrl', $project->approved)";
 		echo $query;
