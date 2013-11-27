@@ -8,8 +8,8 @@ class db {
         $this->connect($address,$username,$password,$database_name);
     }
 
-	function connect($address='', $username='', $password='', $database_name='base4') {
-		mysql_connect() or die(mysql_error()); 
+	function connect($address='', $username='rwilsonp', $password='rwilsonp123', $database_name='base4') {
+		mysql_connect($username=$username, $password=$password) or die(mysql_error()); 
 		mysql_select_db($database_name) or die(mysql_error());
 	}
 }
