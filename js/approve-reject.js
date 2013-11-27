@@ -1,5 +1,5 @@
 function approveSuccess(data) {
-    console.log(data);
+    openModal();
 }
 
 function approveError(data) {
@@ -7,9 +7,13 @@ function approveError(data) {
 }
 
 function rejectSuccess(data) {
-    console.log(data);
+    openModal();
 }
 
 function rejectError(data) {
     console.log(data);
+}
+
+function openModal() {
+    $('.modal').modal('show');
 }
