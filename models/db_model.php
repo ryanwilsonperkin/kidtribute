@@ -3,12 +3,12 @@
 class db {
   protected static $dbh = false;
 
-    function __construct($address='KidTributeDB.db.11714796.hostedresource.com', $username='KidTributeDB', $password='Edgdfnuq29!', $database_name='KidTributeDB')
+    function __construct($address='', $username='', $password='', $database_name='base4')
     {
         $this->connect($address,$username,$password,$database_name);
     }
 
-	function connect($address='KidTributeDB.db.11714796.hostedresource.com', $username='KidTributeDB', $password='Edgdfnuq29!', $database_name='KidTributeDB') {
+	function connect($address='', $username='', $password='', $database_name='base4') {
 		mysql_connect() or die(mysql_error()); 
 		mysql_select_db($database_name) or die(mysql_error());
 	}
