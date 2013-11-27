@@ -22,9 +22,11 @@ elseif($_SERVER['REQUEST_METHOD'] == 'POST')
 }
 else
 {
-	$put_vars = json_decode(file_get_contents("php://input"));
-	$function_name = $put_vars['functionName'];
-	$parameters = $put_vars['parameters'];
+	$put = array();
+	parse_str(file_get_contents('php://input'), $put);
+	echo json_encode($put);
+	$function_name = $put['functionName'];
+	$parameters = $put['parameters'];
 }
 
 switch ($function_name)
@@ -154,7 +156,9 @@ function CreateProject($parameters)
     $imageUrl = $parameters['imageUrl'];
     $user_email = $parameters['userEmail'];
     $category = $parameters['category'];
+    echo 'title ='.$title;
 	$projectObject = new projectRequest(null, $school_id, $teacher_id, $title, $description, $startDate, $endDate, $imageUrl, $user_email, $category);
+	echo json_encode($projectObject);
 	controller_CreateProject($projectObject);
 }
 

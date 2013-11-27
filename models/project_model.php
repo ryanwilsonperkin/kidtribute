@@ -9,7 +9,6 @@ class project_model extends db
 	function load($id=-1)
 	{
 		$query = "SELECT * FROM `Projects` WHERE `project_id`=" . $id;
-		echo $query;
 		$result = mysql_query($query) or die(mysql_error());
         $result = _parse_result($result);
         $user_object = new projectDB();
@@ -100,6 +99,7 @@ class project_model extends db
 	function create_project($project)
 	{
 		$query = "INSERT INTO `Projects` (school_id, teacher_id, category_id, title, description, startDate, endDate, imageUrl, approved) VALUES ($project->school_id, $project->teacher_id, $project->category_id, '$project->title', '$project->description', '$project->startDate', '$project->endDate', '$project->imageUrl', $project->approved)";
+		echo $query;
 		$result = mysql_query($query);
 		$result = $this->load(mysql_insert_id()); //loads the newly created project from DB so we can return it.
 		return $result;
