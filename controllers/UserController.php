@@ -1,7 +1,7 @@
 <?php
 include_once dirname(__FILE__) . '/../models/user_model.php';
 include_once dirname(__FILE__) . '/../DBobjects/UserDBObject.php';
-include_once dirname(__FILE__) . '/../RequestObjects/UserRequestObject.php';
+//include_once dirname(__FILE__) . '/../RequestObjects/UserRequestObject.php';
 
 function controller_Login($username, $password){
     //get a user from the database via their email address
