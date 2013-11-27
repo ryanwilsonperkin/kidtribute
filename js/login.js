@@ -30,7 +30,7 @@ var loginSuccess = function (data) {
     var user = data.results;
 
     // Check whether the user was found in the database.
-    if (data.status == '404') {
+    if (data.status != '200') {
         $('#LoginError').removeClass('hidden');
         $('#LoginError').html('Wrong username/password. Please try again.');
     }
