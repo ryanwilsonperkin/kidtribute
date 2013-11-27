@@ -32,6 +32,7 @@ var loginSuccess = function (data) {
     // Check whether the user was found in the database.
     if (data.status == '404') {
         $('#LoginError').removeClass('hidden');
+        $('#LoginError').html('Wrong username/password. Please try again.');
     }
     else {
         // Create the cookie if the user object was returned successfully.
@@ -44,6 +45,8 @@ var loginSuccess = function (data) {
 // Callback for an unsuccessful call to the Login backend service.
 // TODO: Currently a stub, we should update this with an appropriate message.
 var loginFailure = function (data) {
+    $('#LoginError').removeClass('hidden');
+    $('#LoginError').html('Unable to connect to the database to authenticate you. Please try again later.');
     console.log('ERROR: Problem when calling the Login service.');
     console.log(data);
 }
