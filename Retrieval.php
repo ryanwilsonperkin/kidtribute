@@ -28,7 +28,7 @@ else
 }
 
 echo json_encode($function_name);
-echo parameters;
+echo $parameters;
 
 switch ($function_name)
 {
