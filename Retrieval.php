@@ -18,8 +18,8 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
 else
 {
 	$put_vars = json_decode(file_get_contents("php://input"));
-	$function_name = $put_vars->functionName;
-	$parameters = $put_vars->parameters;
+	$function_name = $put_vars['functionName'];
+	$parameters = $put_vars['parameters'];
 }
 
 echo json_encode($function_name);
