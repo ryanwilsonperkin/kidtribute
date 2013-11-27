@@ -111,7 +111,7 @@ switch ($function_name)
 
 function Login($parameters)
 {
-	controller_Login($parameters->email, $parameters->password);
+	controller_Login($parameters->username, $parameters->password);
 }
 
 function GetUser($parameters)
