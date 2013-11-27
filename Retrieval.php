@@ -27,7 +27,7 @@ else
 	$parameters = $put_vars['parameters'];
 }
 echo json_encode($function_name);
-echo json_encode($parameters);
+echo json_encode($parameters['username']);
 
 switch ($function_name)
 {
