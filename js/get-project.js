@@ -7,4 +7,15 @@ function getProjectError(data) {
     console.log(data);
 }
 
-GetProject(1,getProjectSuccess, getProjectError);
+function getURLParameter(name) {
+    return decodeURI(
+        (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
+    );
+}
+
+function getProjectId() {
+    var id = parseInt(getURLParameter('id'));
+    return id ? id : 1;
+}
+
+GetProject(getProjectId(), getProjectSuccess, getProjectError);
