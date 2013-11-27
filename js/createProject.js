@@ -10,6 +10,7 @@ var createProjectSubmit = function () {
     }
 
     if (!requiredFieldsFilled()) {
+        $('#CreateProjectError').html('You must fill in all input fields before submitting.');
         $('#CreateProjectError').removeClass('hidden');
         return;
     }
@@ -35,12 +36,15 @@ var createProjectSubmit = function () {
 // Callback for an successful call to the CreateProject backend service.
 // Redirects to the view project page passing the new project ID as a URL parameter.
 var createProjectSuccess = function (data) {
-    document.location.href = 'project.html?id=' + data.results.projectId;
+    document.location.href = 'project.html?id=' + data.results.id;
 }
 
 // Callback for an unsuccessful call to the CreateProject backend service.
 // TODO: Currently a stub, we should update this with an appropriate message.
 var createProjectFailure = function (data) {
+    $('#CreateProjectError').html('There was an error connecting to the database. Unable to create the project.');
+    $('#CreateProjectError').removeClass('hidden');
+
     console.log('ERROR: Problem when calling the CreateProject service.');
     console.log(data);
 }
