@@ -15,13 +15,17 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
 	$function_name = $_GET['functionName'];
 	$parameters = json_decode($_GET['parameters']);
 }
+elseif($_SERVER['REQUEST_METHOD'] == 'POST')
+{
+	$function_name = $_POST['functionName'];
+	$parameters = json_decode($_POST['parameters']);
+}
 else
 {
 	$put_vars = json_decode(file_get_contents("php://input"));
 	$function_name = $put_vars['functionName'];
 	$parameters = $put_vars['parameters'];
 }
-echo file_get_contents('php://input');
 echo json_encode($function_name);
 echo json_encode($parameters);
 
