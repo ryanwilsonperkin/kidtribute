@@ -24,10 +24,23 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li id="Login"><a  href="login.html"><button type="button" class="btn btn-sm btn-success">
-              <span class="glyphicon glyphicon-log-in"></span> Login</button></a></li>
-            <li id="Username"><a class="disabled">Logged in as blank</a></li>
-            <li id="Logout" class="hidden"><a href="#" onclick="logout();">Logout</a></li>
+            <li id="Login">
+              <a href="login.html">
+                <button type="button" class="btn btn-sm btn-success">
+                  <span class="glyphicon glyphicon-log-in"></span> Login
+                </button>
+              </a>
+            </li>
+            <li id="Username">
+              <p class="navbar-text">Logged in as blank</p>
+            </li>
+            <li id="Logout" class="hidden">
+              <a href="#" onclick="logout();">
+                <button type="button" class="btn btn-sm btn-danger">
+                  <span class="glyphicon glyphicon-log-out"></span> Logout
+                </button>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -37,7 +50,7 @@
       <div class="row">
         <div id="sidebar" class="col-md-3">
           <ul class="nav nav-pills nav-stacked">
-            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                 Browse projects <span class="caret"></span>
@@ -50,6 +63,7 @@
             <li id="CreateProject"><a href="create-project.html">Create a project</a></li>
             <li id="TeacherViewProjects"><a href="teacher-view-my-projects.html">View  my projects</a></li>
             <li id="PrincipalViewProjects"><a href="principal-view-my-projects.html">Manage teacher projects <span class="badge">3</span></a></li>
+            <li class="active"><a href="aboutKT.html">About KidTribute</a></li>
             <li>
               <form class="navbar-form" role="search">
                 <div class="form-group">
@@ -62,7 +76,51 @@
             </li>
           </ul>
         </div>
-        
+        <div id="content" class="col-md-9">
+          <h1 class="text-center" style="font-weight: bold;">Get to Know Kidtribute</h1>
+          <p class="text-center lead">Learn about our mission and how to get involved!</p> 
+          <ul class="media-list">
+            <li class="media">
+              <div class="media-body">
+                <h4 style="font-weight: bold;">KidTribute Mission Statement</h4>
+                <p>Donate now to help create new learning experiences for kids.</p>
+                <ul>
+                  <li>Help kids learn in new ways. Contribute today.</li>
+                  <li>Help kids get inspired by the world around them. Find a project and donate today.</li>
+                  <li>Provide new opportunities for kids to learn. Search for a project to contribute to now.</li> 
+                  <li>Support extracurricular learning opportunities for kids today. Find a project to support now.</li> 
+                </ul>
+              </div>
+            </li>
+            <li class="media">
+              <div class="media-body">
+                <h4 style="font-weight: bold;">How to Create an Account on KidTribute</h4>
+                <p style="font-weight: bold;">Teacher</p>
+                <p>Teacher accounts are created by a principal account.
+                Get into contact with your principal about getting your account setup on the KidTribute site.</p>
+                <p style="font-weight: bold;">Principal</p>
+                <p>Principal accounts are created and vetted by the KidTribute team.
+                Get into contact with the KidTribute team by sending an email to admin@kidtribute.ca that includes your full name, school name and school board.</p>
+              </div>
+            </li>
+            <li class="media">
+              <div class="media-body">
+                <h4 style="font-weight: bold;">How to Create a Project</h4>
+                <p>To create a fundraising project through KidTribute, you are required to have either a Principal or Teacher account. While there are differences in project creation between teachers and principals, both require project approval by the principal prior to the new project becoming visible to potential donors.</p>
+
+                <p style="font-weight: bold;">The Approval Process</p>
+                <p>After a project is created by either a principal or a teacher, the project will not be viewable by donors until approved by the principal. When a principal logs into KidTribute, there will be a “Manage Teacher Projects” button on the sidebar which bring the principal to a list of all pending projects. By viewing this list, the principal is able to:</p>
+
+                <p>Approve - project is removed from the list of pending projects, becomes viewable to the public and a notification email is sent to the teacher.</p>
+                <p>Reject - project is removed from the list of pending projects but a notification email is sent to the teacher informing them of the rejection and asking them to resubmit for approval.</p>
+
+                <p style="font-weight: bold;">Creating a Project</p>
+                <p>To create a new project on KidTribute, you first need to be logged in as either a teacher or principal. By clicking the “Create a Project” button on the sidebar, you will be redirected to the create project page. After filling in the necessary information, you can then press submit to send the project to the principal’s list of pending projects where it will await approval. In the case that a principal is the one creating the project, it will still be added to their own approval queue prior to being viewable by donors.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
     <script rel="text/javascript" src="js/jquery-1.10.1.min.js"></script>
     <script rel="text/javascript" src="js/bootstrap.min.js"></script>
