@@ -151,9 +151,7 @@ function CreateProject(project, success, error) {
         data: { 
             key: API_KEY,
             functionName: "CreateProject",
-            parameters: { 
-                project: project
-            }
+            parameters: project
         },
         dataType: 'json',
         success: success,
