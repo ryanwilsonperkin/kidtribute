@@ -15,11 +15,11 @@ function getProjectSuccess(data) {
 function getProjectError(data) {
     console.log("ERROR: Could not GetProject");
     console.log(data);
-    $('glyphicon-calendar').remove();
+    $('.glyphicon-calendar').remove();
     var alertDiv = $('<div>')
         .addClass('alert alert-danger')
         .text('Project not found.');
-    $('content').append(alertDiv);
+    $('#content').append(alertDiv);
 }
 
 function getURLParameter(name) {
