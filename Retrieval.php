@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
 elseif($_SERVER['REQUEST_METHOD'] == 'POST')
 {
 	$function_name = $_POST['functionName'];
-	$parameters = json_decode($_POST['parameters']);
+	$parameters = $_POST['parameters'];
 }
 else
 {
