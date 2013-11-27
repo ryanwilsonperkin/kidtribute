@@ -141,7 +141,6 @@ function CreateUser($parameters)
 
 function GetProject($parameters)
 {
-	echo 'echo from retrieval:'.$parameters['projectId']."--";
 	controller_GetProject($parameters['projectId']);
 }
 
