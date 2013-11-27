@@ -29,7 +29,7 @@ var createProjectSubmit = function () {
         isApproved: false,
     };
 
-    createProject(newProject, createProjectSuccess, createProjectFailure);
+    CreateProject(newProject, createProjectSuccess, createProjectFailure);
 }
 
 // Callback for an successful call to the CreateProject backend service.
