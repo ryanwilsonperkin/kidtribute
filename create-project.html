@@ -95,21 +95,6 @@
                   <label for="projectName">Name</label>
                   <input type="text" class="form-control" id="projectName" placeholder="Project Name">
                 </div>
-                <div id="ProjectManagerDropdown" class="form-group">
-                  <label for="projectManager">Project Manager</label>
-                  <select class="form-control" id="projectManager">
-                    <option id="projectManagerDefault"></option>
-                  </select>
-                </div>
-                <div id="ProjectCategoryDropdown" class="form-group">
-                  <label for="projectCategory">Project Category</label>
-                  <select class="form-control" id="projectCategory">
-                    <option>Math</option>
-                    <option>Art</option>
-                    <option>Science</option>
-                    <option>PhysEd</option>
-                  </select>
-                </div>
                 <div id="CommunityMemberDropdown" class="form-group">
                   <label for="communityMember">Community Members</label>
                   <select multiple class="form-control" id="communityMember">
@@ -134,31 +119,35 @@
                 </div>
               </div>
               <div class="col-md-6">
-                <div class="form-group">
-                  <label for="projectStartDate">Fundraising Start Date</label>
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-6">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-6">
+                    <div id="ProjectManagerDropdown" class="form-group">
+                      <label for="projectManager">Project Manager</label>
+                      <select class="form-control" id="projectManager">
+                        <option id="projectManagerDefault"></option>
+                      </select>
+                    </div>
+                    <div id="ProjectCategoryDropdown" class="form-group">
+                      <label for="projectCategory">Project Category</label>
+                      <select class="form-control" id="projectCategory">
+                        <option>Math</option>
+                        <option>Art</option>
+                        <option>Science</option>
+                        <option>PhysEd</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="projectStartDate">Fundraising Start Date</label>
                       <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                         <input type="datepicker" data-provide="datepicker" class="form-control" id="projectStartDate" placeholder="Start Date">
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="projectGoal">Fundraising Goal</label>
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-6">
-                      <div class="input-group">
-                        <span class="input-group-addon">$</span>
-                        <input type="number" class="form-control" id="projectGoal" placeholder="0.00">
-                      </div>
+                    <div class="form-group">
+                      <a class="btn btn-primary" onclick="createProjectSubmit();">Submit</a>
+                      <a href="index.html" class="btn btn-default">Cancel</a>
                     </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <a class="btn btn-primary" onclick="createProjectSubmit();">Submit</a>
-                  <a href="index.html" class="btn btn-default">Cancel</a>
                 </div>
               </div>
             </form>
