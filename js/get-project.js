@@ -7,4 +7,4 @@ function getProjectError(data) {
     console.log(data);
 }
 
-GetProject(getProjectSuccess, getProjectError);
+GetProject(1,getProjectSuccess, getProjectError);
