@@ -27,6 +27,8 @@ elseif($_SERVER['REQUEST_METHOD'] == 'POST')
 	$parameters = json_decode($_POST['parameters']);
 }
 
+echo json_encode($parameters);
+
 switch ($function_name)
 {
 	case "Login":
