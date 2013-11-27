@@ -24,7 +24,7 @@ else
 {
 	$put = array();
 	parse_str(file_get_contents('php://input'), $put);
-	echo json_encode($put);
+	
 	$function_name = $put['functionName'];
 	$parameters = $put['parameters'];
 }
@@ -134,7 +134,7 @@ function CreateUser($parameters)
 	$bio = $parameters['bio'];
 	$associatedProjects = $parameters['associatedProjects'];
 	$imageUrl = $parameters['imageUrl'];
-    $username = $parameters['username'];
+    	$username = $parameters['username'];
 	$userObject = new userRequest(null, $school, $userType, $email, $password, $name, $title, $skills, $isVetted, $bio, $associatedProjects, $imageUrl, $username);
 	controller_CreateUser($userObject);
 }
@@ -155,9 +155,7 @@ function CreateProject($parameters)
     $imageUrl = $parameters['imageUrl'];
     $user_email = $parameters['userEmail'];
     $category = $parameters['category'];
-    echo 'title ='.$title;
 	$projectObject = new projectRequest(null, $school_id, $teacher_id, $title, $description, $startDate, $endDate, $imageUrl, $user_email, $category);
-	echo json_encode($projectObject);
 	controller_CreateProject($projectObject);
 }
 
