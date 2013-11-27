@@ -40,7 +40,6 @@ var createProjectSuccess = function (data) {
 }
 
 // Callback for an unsuccessful call to the CreateProject backend service.
-// TODO: Currently a stub, we should update this with an appropriate message.
 var createProjectFailure = function (data) {
     $('#CreateProjectError').html('There was an error connecting to the database. Unable to create the project.');
     $('#CreateProjectError').removeClass('hidden');
