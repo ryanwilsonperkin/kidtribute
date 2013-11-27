@@ -116,7 +116,7 @@ class project_model extends db
 		if ($project->category_id == null)
 			$project->category_id = 1;
 		
-		$query = "INSERT INTO `Projects` (school_id, teacher_id, category_id, title, description, startDate, endDate, imageUrl, approved) VALUES ($project->school_id, $project->teacher_id, $project->category_id, '$project->title', '$project->description', CAST ('$project->startDate' AS DATE), CAST('$project->endDate' AS DATE), '$project->imageUrl', $project->approved)";
+		$query = "INSERT INTO `Projects` (school_id, teacher_id, category_id, title, description, startDate, endDate, imageUrl, approved) VALUES ($project->school_id, $project->teacher_id, $project->category_id, '$project->title', '$project->description', CAST('$project->startDate' AS DATE), CAST('$project->endDate' AS DATE), '$project->imageUrl', $project->approved)";
 		echo $query;
 		$result = mysql_query($query);
 		echo mysql_error();
