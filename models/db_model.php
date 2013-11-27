@@ -9,7 +9,7 @@ class db {
     }
 
 	function connect($address='KidTributeDB.db.11714796.hostedresource.com', $username='KidTributeDB', $password='Edgdfnuq29!', $database_name='KidTributeDB') {
-		mysql_connect($address, $username, $password) or die(mysql_error()); 
+		mysql_connect() or die(mysql_error()); 
 		mysql_select_db($database_name) or die(mysql_error());
 	}
 }
