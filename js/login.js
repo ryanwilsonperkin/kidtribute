@@ -27,7 +27,7 @@ $(document).ready(function() {
 // be a JSON version of the User object. If unsuccessful, makes the wrong
 // username/password warning message visible to the user.
 var loginSuccess = function (data) {
-    var user = data.result;
+    var user = data.results;
 
     // Check whether the user was found in the database.
     if (user.id == null) {
@@ -37,6 +37,7 @@ var loginSuccess = function (data) {
         // Create the cookie if the user object was returned successfully.
         $.removeCookie('KidTributeLogin');
         $.cookie('KidTributeLogin', JSON.stringify(user), {path: '/', expires: 7});
+        document.location.href = 'index.html';
     }
 }
 
@@ -56,7 +57,8 @@ var verifyCredentials = function () {
 
 // Gets the username of the current user, or undefined if not logged in.
 var getCurrentUser = function () {
-    return $.cookie('KidTributeLogin');
+    var user = JSON.parse($.cookie('KidTributeLogin'));
+    return user.username;
 }
 
 // Is called upon the user pressing the logout button.
