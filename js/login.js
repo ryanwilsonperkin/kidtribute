@@ -44,7 +44,8 @@ var loginSuccess = function (data) {
 // Callback for an unsuccessful call to the Login backend service.
 // TODO: Currently a stub, we should update this with an appropriate message.
 var loginFailure = function (data) {
-    console.log('ERROR: Problem when calling the Login service.')
+    console.log('ERROR: Problem when calling the Login service.');
+    console.log(data);
 }
 
 // Called when the user presses the Login button on the Login page.
