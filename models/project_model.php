@@ -98,7 +98,24 @@ class project_model extends db
     
 	function create_project($project)
 	{
-		$query = "INSERT INTO `Projects` (school_id, teacher_id, category_id, title, description, startDate, endDate, imageUrl, approved) VALUES ($project->school_id, $project->teacher_id, $project->category_id, '$project->title', '$project->description', '$project->startDate', '$project->endDate', '$project->imageUrl', $project->approved)";
+		
+		if ($project->title ==null)
+			$project->title="null";
+		
+		if ($project->description == null)
+			$project->description = "null";
+		
+		if ($project->startDate == null)
+			$project->startDate = "null";
+		
+		if ($project->endDate == null)
+			$project->endDate = "null";
+		
+		if ($project->imageUrl == null)
+			$project->imageUrl = "null";
+		
+		
+		$query = "INSERT INTO `Projects` (school_id, teacher_id, category_id, title, description, startDate, endDate, imageUrl, approved) VALUES ($project->school_id, $project->teacher_id, $project->category_id, '$project->title', '$project->description', CAST ('$project->startDate' AS DATETIME), CASE('$project->endDate' AS DATETIME), '$project->imageUrl', $project->approved)";
 		$result = mysql_query($query);
 		$result = $this->load(mysql_insert_id()); //loads the newly created project from DB so we can return it.
 		return $result;
