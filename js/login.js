@@ -7,7 +7,7 @@ $(document).ready(function() {
         $('#Username').children().html('Logged in as ' + getCurrentUser());
 
         // Hide the principal stuff if this is the teacher
-        if (getCurrentUser() == 'teacher')
+        if (getCurrentUserType() == 'teacher')
             $('#PrincipalViewProjects').addClass('hidden');
     }
     else {
@@ -60,6 +60,21 @@ var getCurrentUser = function () {
     var userJSON = $.cookie('KidTributeLogin');
     if (userJSON != undefined) {
         return JSON.parse(userJSON).username;
+    }
+    else {
+        return undefined;
+    }
+}
+
+// Gets the type of the current user (ie. teacher, principle),
+// or undefined if not logged in.
+var getCurrentUserType = function () {
+    var userJSON = $.cookie('KidTributeLogin');
+    if (userJSON != undefined) {
+        return JSON.parse(userJSON).userType;
+    }
+    else {
+        return undefined;
     }
 }
 
