@@ -26,7 +26,7 @@ var createProjectSubmit = function () {
         startDate: formatDate($('#projectStartDate').val()),
         endDate: null,
         imageUrl: null,
-        category: $('#projectCategory').val(),
+        category: $('#projectCategory').val().toLowerCase(),
         isApproved: false,
     };
 
