@@ -13,7 +13,7 @@ include_once dirname(__FILE__) . '/RequestObjects/UserRequestObject.php';
 if($_SERVER['REQUEST_METHOD'] == 'GET') 
 {
 	$function_name = $_GET['functionName'];
-	$parameters = json_decode($_GET['parameters']);
+	$parameters = $_GET['parameters'];
 }
 elseif($_SERVER['REQUEST_METHOD'] == 'POST')
 {
