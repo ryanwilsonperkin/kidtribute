@@ -155,6 +155,7 @@ function CreateProject($parameters)
     $user_email = $parameters['userEmail'];
     $category = $parameters['category'];
 	$projectObject = new projectRequest(null, $school_id, $teacher_id, $title, $description, $startDate, $endDate, $imageUrl, $user_email, $category);
+	echo json_encode($projectObject);
 	controller_CreateProject($projectObject);
 }
 
