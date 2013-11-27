@@ -57,8 +57,10 @@ var verifyCredentials = function () {
 
 // Gets the username of the current user, or undefined if not logged in.
 var getCurrentUser = function () {
-    var user = JSON.parse($.cookie('KidTributeLogin'));
-    return user.username;
+    var userJSON = $.cookie('KidTributeLogin');
+    if (userJSON != undefined) {
+        return JSON.parse(userJSON).username;
+    }
 }
 
 // Is called upon the user pressing the logout button.
