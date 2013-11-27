@@ -1,5 +1,11 @@
 function getProjectSuccess(data) {
     console.log(data);
+    $('#title').text(data.results.title);
+    $('#userEmail').text('Contact: ' + data.results.userEmail);
+    $('#category').text(data.results.category);
+    $('#startDate').text(data.results.startDate);
+    $('#endDate').text(data.results.endDate);
+    $('#description').text(data.results.description);
 }
 
 function getProjectError(data) {
