@@ -1,10 +1,10 @@
 // Checks whether the user is logged in or not on the page load.
 $(document).ready(function() {
-    if (getCurrentUser() != undefined) {
+    if (getCurrentUsername() != undefined) {
         $('#Logout').removeClass('hidden');
         $('#Login').addClass('hidden');
         $('#Username').removeClass('hidden');
-        $('#Username').children().html('Logged in as ' + getCurrentUser());
+        $('#Username').children().html('Logged in as ' + getCurrentUsername());
 
         // Hide the principal stuff if this is the teacher
         if (getCurrentUserType() == 'teacher')
@@ -30,7 +30,7 @@ var loginSuccess = function (data) {
     var user = data.results;
 
     // Check whether the user was found in the database.
-    if (user.id == null) {
+    if (data.status == '404') {
         $('#LoginError').removeClass('hidden');
     }
     else {
@@ -55,8 +55,19 @@ var verifyCredentials = function () {
     Login(username, password, loginSuccess, loginFailure);
 }
 
-// Gets the username of the current user, or undefined if not logged in.
+// Returns the User object of the current user or undefined if no one is logged in.
 var getCurrentUser = function () {
+    var userJSON = $.cookie('KidTributeLogin');
+    if (userJSON != undefined) {
+        return JSON.parse(userJSON);
+    }
+    else {
+        return undefined;
+    }
+}
+
+// Gets the username of the current user, or undefined if not logged in.
+var getCurrentUsername = function () {
     var userJSON = $.cookie('KidTributeLogin');
     if (userJSON != undefined) {
         return JSON.parse(userJSON).username;
