@@ -11,7 +11,7 @@ function controller_GetProject($projectId)
 	$project_model = new project_model();
 	$user_model = new user_model();
 	$category_model = new category_model();
-	echo "projectid=".$projectId;
+	echo "projectid=".$projectId."--";
 	$projectDB = $project_model->load($projectId);
 	$user = $user_model->load($projectDB->teacher_id); //look up user email based on ->teacher_id //use user model
 	$category = $category_model->load($projectDB->category_id);//look up category name based on ->category_id //use category model
