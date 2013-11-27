@@ -1,5 +1,7 @@
 <?php
-
+ini_set('mysql.default_host', 'localhost');
+ini_set('mysql.default_user', 'rwilsonp');
+ini_set('mysql.default_password', 'rwilsonp123');
 class db {
   protected static $dbh = false;
 
