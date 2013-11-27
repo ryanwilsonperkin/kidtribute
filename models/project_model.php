@@ -9,6 +9,7 @@ class project_model extends db
 	function load($id=-1)
 	{
 		$query = "SELECT * FROM `Projects` WHERE `project_id`=" . $id;
+		echo $query;
 		$result = mysql_query($query) or die(mysql_error());
         $result = _parse_result($result);
         $user_object = new projectDB();
