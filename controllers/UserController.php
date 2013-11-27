@@ -40,7 +40,7 @@ function controller_GetUser($userId){
     else {
         $response_object = new ResponseObject("404", "Not Found", array("The user matching the supplied ID could not be found."), null);
     }
-
+    echo 'hope this stops the redirection to login';
     echo json_encode($response_object);
 }
 
