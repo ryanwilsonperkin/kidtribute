@@ -15,7 +15,7 @@ function getProjectSuccess(data) {
 function getProjectError(data) {
     console.log("ERROR: Could not GetProject");
     console.log(data);
-    $('.glyphicon-calendar').remove();
+    $('#content').children().remove();
     var alertDiv = $('<div>')
         .addClass('alert alert-danger')
         .text('Project not found.');
