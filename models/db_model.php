@@ -3,7 +3,7 @@
 class db {
   protected static $dbh = false;
 
-    function __construct($address='', $username='', $password='', $database_name='base4')
+    function __construct($address='', $username='rwilsonp', $password='rwilsonp123', $database_name='base4')
     {
         $this->connect($address,$username,$password,$database_name);
     }
