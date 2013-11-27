@@ -1,6 +1,6 @@
 function getProjectSuccess(data) {
     console.log(data);
-    $('#title').text(data.resultstitle);
+    $('#title').text(data.results.title);
     $('#userEmail').text('Contact: ' + data.results.userEmail);
     $('#category').text(data.results.category);
     $('#startDate').text(data.results.startDate);
