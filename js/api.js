@@ -147,7 +147,7 @@ function GetProject(projectId, success, error) {
 function CreateProject(project, success, error) {
     $.ajax({
         url: 'Retrieval.php',
-        type: 'POST',
+        type: 'PUT',
         data: { 
             key: API_KEY,
             functionName: "CreateProject",
