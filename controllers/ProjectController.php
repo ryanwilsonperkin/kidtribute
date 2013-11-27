@@ -39,7 +39,7 @@ function controller_CreateProject($project)
                                                                                   $projectDB->description, $projectDB->startDate, $projectDB->endDate, $projectDB->imageUrl,
                                                                                   $user->email,$category->name);
 	
-	$responseObject = new ResponseObject("200", "OK", null, $creationResponse);
+	$responseObject = new ResponseObject("200", "OK", null, $projectResponse);
 	echo json_encode($responseObject);
 }
 
