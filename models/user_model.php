@@ -17,7 +17,7 @@ class user_model extends db
 
 	function load_user_type($usertype_id)
 	{
-		$query = "Select * FROM 'UserTypes' WHERE `user_type_id`=".$usertype_id;
+		$query = "Select * FROM `UserTypes` WHERE `user_type_id`=".$usertype_id;
 		$result = mysql_query($query) or die(mysql_error());
 		$result = _parse_result($result);
 		return $result['name'];
