@@ -24,6 +24,7 @@ else
 {
 	$put = array();
 	parse_str(file_get_contents('php://input'), $put);
+	echo json_encode($put);
 	$function_name = $put['functionName'];
 	$parameters = $put['parameters'];
 }
