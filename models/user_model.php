@@ -15,9 +15,9 @@ class user_model extends db
         return _convert_to_object($result, $user_object);
 	}
 
-	function load_from_email($email)
+	function load_from_username($username)
 	{
-		$query = "SELECT * FROM `Users` WHERE `email`='" . $email ."';";
+		$query = "SELECT * FROM `Users` WHERE `username`='" . $username ."';";
 		$result = mysql_query($query) or die(mysql_error());
         $result = _parse_result($result);
         $user_object = new userDB();
@@ -26,7 +26,7 @@ class user_model extends db
 
 	function create_user($user_db)
 	{
-		$query = "INSERT INTO `Users` (school_id, user_type_id, email, password, name, title, isVetted, bio, imageUrl)
+		$query = "INSERT INTO `Users` (school_id, user_type_id, email, password, name, title, isVetted, bio, imageUrl, username)
                   VALUES (" . $user_db->school_id . ",
                           " . $user_db->user_type_id .",
                           '". $user_db->email ."',
@@ -35,7 +35,8 @@ class user_model extends db
                           '". $user_db->title ."',
                           " . $user_db->isVetted .",
                           '". $user_db->bio ."',
-                          '". $user_db->imageUrl ."')";
+                          '". $user_db->imageUrl ."',
+                          '". $user_db->username ."')";
 		$result = mysql_query($query) or die(mysql_error());
 		$result = $this->load(mysql_insert_id());
 		return $result;
@@ -51,7 +52,8 @@ class user_model extends db
                            `title` = '" . $user_db->title . "',
                            `isVetted` = '" . $user_db->isVetted . "',
                            `bio` = '" . $user_db->bio . "',
-                           `imageUrl` = '" . $user_db->imageUrl . "'
+                           `imageUrl` = '" . $user_db->imageUrl . "',
+                           `username` = '" . $user_db->username . "',
                     WHERE  `user_id` = " . $user_db->user_id . ";";
         $result = mysql_query($query) or die(mysql_error());
         $result = $this->load($user_db->user_id);
