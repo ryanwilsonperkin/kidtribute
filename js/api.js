@@ -66,7 +66,7 @@ function GetUser(userId, success, error) {
         data: { 
             key: API_KEY,
             functionName: "GetUser",
-            parameter: { 
+            parameters: { 
                 userId: userId 
             }
         },
@@ -83,7 +83,7 @@ function CreateUser(user, success, error) {
         data: { 
             key: API_KEY,
             functionName: "CreateUser",
-            parameter: { 
+            parameters: { 
                 user: user 
             }
         },
@@ -100,7 +100,7 @@ function UpdateUser(user, success, error) {
         data: { 
             key: API_KEY,
             functionName: "UpdateUser",
-            parameter: { 
+            parameters: { 
                 user: user 
             }
         },
@@ -117,7 +117,7 @@ function VetCommunityMember(project, success, error) {
         data: { 
             key: API_KEY,
             functionName: "VetCommunityMember",
-            parameter: { 
+            parameters: { 
                 project: project 
             }
         },
@@ -134,7 +134,7 @@ function GetProject(projectId, success, error) {
         data: { 
             key: API_KEY,
             functionName: "GetProject",
-            parameter: { 
+            parameters: { 
                 projectId: projectId
             }
         },
@@ -151,7 +151,7 @@ function CreateProject(project, success, error) {
         data: { 
             key: API_KEY,
             functionName: "CreateProject",
-            parameter: { 
+            parameters: { 
                 project: project
             }
         },
@@ -168,7 +168,7 @@ function UpdateProject(project, success, error) {
         data: { 
             key: API_KEY,
             functionName: "UpdateProject",
-            parameter: { 
+            parameters: { 
                 project: project
             }
         },
@@ -185,7 +185,7 @@ function AddCommMember(projectId, userId, success, error) {
         data: { 
             key: API_KEY,
             functionName: "AddCommMember",
-            parameter: { 
+            parameters: { 
                 projectId: projectId,
                 userId: userId
             }
@@ -203,7 +203,7 @@ function ApproveProject(projectId, success, error) {
         data: { 
             key: API_KEY,
             functionName: "ApproveProject",
-            parameter: { 
+            parameters: { 
                 projectId: projectId
             }
         },
@@ -220,7 +220,7 @@ function RejectProject(projectId, comment, success, error) {
         data: { 
             key: API_KEY,
             functionName: "RejectProject",
-            parameter: { 
+            parameters: { 
                 projectId: projectId
             }
         },
@@ -237,7 +237,7 @@ function GetAllUnapprovedProjects(principalId, success, error) {
         data: { 
             key: API_KEY,
             functionName: "GetAllUnapprovedProjects",
-            parameter: { 
+            parameters: { 
                 principalId: principalId
             }
         },
@@ -254,7 +254,7 @@ function GetAllProjectsForTeacher(teacherId, success, error) {
         data: { 
             key: API_KEY,
             functionName: "GetAllProjectsForTeacher",
-            parameter: { 
+            parameters: { 
                 teacherId: teacherId
             }
         },
@@ -271,7 +271,7 @@ function GetAllProjectsForPrincipal(principalId, success, error) {
         data: { 
             key: API_KEY,
             functionName: "GetAllProjectsForPrincipal",
-            parameter: { 
+            parameters: { 
                 principalId: principalId
             }
         },
@@ -288,7 +288,7 @@ function GetAllProjectsForCommunityMember(communityMemberId, success, error) {
         data: { 
             key: API_KEY,
             functionName: "GetAllProjectsForCommunityMember",
-            parameter: { 
+            parameters: { 
                 communityMemberId: communityMemberId
             }
         },
@@ -305,7 +305,7 @@ function GetAllProjectsWhere(query, school, teacher, title, subject, success, er
         data: { 
             key: API_KEY,
             functionName: "GetAllProjectsWhere",
-            parameter: { 
+            parameters: { 
                 query: query,
                 school: school,
                 teacher: teacher,
@@ -326,7 +326,7 @@ function GetSchool(schoolId, success, error) {
         data: { 
             key: API_KEY,
             functionName: "GetSchool",
-            parameter: { 
+            parameters: { 
                 schoolId: schoolId
             }
         },
@@ -343,7 +343,7 @@ function GetAllSchools(boardId, success, error) {
         data: { 
             key: API_KEY,
             functionName: "GetAllSchools",
-            parameter: { 
+            parameters: { 
                 boardId: boardId
             }
         },
@@ -360,7 +360,7 @@ function GetProjectMembers(projectId, success, error) {
         data: { 
             key: API_KEY,
             functionName: "GetProjectMembers",
-            parameter: { 
+            parameters: { 
                 projectId: projectId
             }
         },
