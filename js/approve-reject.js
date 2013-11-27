@@ -1,15 +1,15 @@
-function approve(projectId) {
-    ApproveProject(
-        projectId,
-        function (data) { console.log(data) },
-        function (data) { console.log(data) }
-    );
+function approveSuccess(data) {
+    console.log(data);
 }
 
-function reject(projectId) {
-    RejectProject(
-        projectId,
-        function (data) { console.log(data) },
-        function (data) { console.log(data) }
-    );
+function approveError(data) {
+    console.log(data);
+}
+
+function rejectSuccess(data) {
+    console.log(data);
+}
+
+function rejectError(data) {
+    console.log(data);
 }
