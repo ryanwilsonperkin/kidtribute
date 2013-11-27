@@ -15,7 +15,7 @@ function controller_Login($username, $password){
                                          $user_object->password, $user_object->name,
                                          $user_object->title, "", $user_object->isVetted,
                                          $user_object->bio, "", $user_object->imageUrl, $user_object->username);
-	$user_type = load_user_type($user_object->user_type_id);
+	$user_type = $user_model->load_user_type($user_object->user_type_id);
 	$user_response->userType = $user_type;
         $response_object = new ResponseObject("200", "OK", null, $user_response);
     }
