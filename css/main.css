@@ -18,3 +18,11 @@ body {
 .callout .img-responsive {
   margin: 0 auto;
 }
+
+.navbar{
+  background-color: WHITE;
+}
+
+.active{
+	background-color: #58ACFA
+}
