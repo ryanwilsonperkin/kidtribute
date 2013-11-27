@@ -21,7 +21,7 @@ else
 	$function_name = $put_vars['functionName'];
 	$parameters = $put_vars['parameters'];
 }
-
+echo file_get_contents('php://input');
 echo json_encode($function_name);
 echo json_encode($parameters);
 
