@@ -26,8 +26,6 @@ else
 	$function_name = $put_vars['functionName'];
 	$parameters = $put_vars['parameters'];
 }
-echo json_encode($function_name);
-echo json_encode($parameters['username']);
 
 switch ($function_name)
 {
@@ -113,176 +111,176 @@ switch ($function_name)
 
 function Login($parameters)
 {
-	controller_Login($parameters->username, $parameters->password);
+	controller_Login($parameters['username'], $parameters['password']);
 }
 
 function GetUser($parameters)
 {
-	controller_GetUser($parameters->userId);
+	controller_GetUser($parameters['userId']);
 }
 
 function CreateUser($parameters)
 {
-	$school = $parameters->schoolId;
-	$userType = $parameters->userType;
-	$email = $parameters->email;
-	$password = $parameters->password;
-	$name = $parameters->name;
-	$title = $parameters->title;
-	$skills = $parameters->skills;
-	$isVetted = $parameters->isVetted;
-	$bio = $parameters->bio;
-	$associatedProjects = $parameters->associatedProjects;
-	$imageUrl = $parameters->imageUrl;
-    $username = $parameters->username;
+	$school = $parameters['schoolId'];
+	$userType = $parameters['userType'];
+	$email = $parameters['email'];
+	$password = $parameters['password'];
+	$name = $parameters['name'];
+	$title = $parameters['title'];
+	$skills = $parameters['skills'];
+	$isVetted = $parameters['isVetted'];
+	$bio = $parameters['bio'];
+	$associatedProjects = $parameters['associatedProjects'];
+	$imageUrl = $parameters['imageUrl'];
+    $username = $parameters['username'];
 	$userObject = new userRequest(null, $school, $userType, $email, $password, $name, $title, $skills, $isVetted, $bio, $associatedProjects, $imageUrl, $username);
 	controller_CreateUser($userObject);
 }
 
 function GetProject($parameters)
 {
-	controller_GetProject($parameters->projectId);
+	controller_GetProject($parameters['projectId']);
 }
 
 function CreateProject($parameters)
 {
-    $school_id = $parameters->schoolId;
-    $teacher_id = $parameters->userId;
-    $title = $parameters->title;
-    $description = $parameters->description;
-	$startDate = $parameters->startDate;
-    $endDate = $parameters->endDate;
-    $imageUrl = $parameters->imageUrl;
-    $user_email = $parameters->userEmail;
-    $category = $parameters->category;
+    $school_id = $parameters['schoolId'];
+    $teacher_id = $parameters['userId'];
+    $title = $parameters['title'];
+    $description = $parameters['description'];
+	$startDate = $parameters['startDate'];
+    $endDate = $parameters['endDate'];
+    $imageUrl = $parameters['imageUrl'];
+    $user_email = $parameters['userEmail'];
+    $category = $parameters['category'];
 	$projectObject = new projectRequest(null, $school_id, $teacher_id, $title, $description, $startDate, $endDate, $imageUrl, $user_email, $category);
 	controller_CreateProject($projectObject);
 }
 
 function UpdateProject($parameters)
 {
-    $project_id = $parameters->id;
-    $school_id = $parameters->schoolId;
-    $teacher_id = $parameters->userId;
-    $title = $parameters->title;
-    $description = $parameters->description;
-	$startDate = $parameters->startDate;
-    $endDate = $parameters->endDate;
-    $imageUrl = $parameters->imageUrl;
-    $user_email = $parameters->userEmail;
-    $category = $parameters->category;
+    $project_id = $parameters['id'];
+    $school_id = $parameters['schoolId'];
+    $teacher_id = $parameters['userId'];
+    $title = $parameters['title'];
+    $description = $parameters['description'];
+	$startDate = $parameters['startDate'];
+    $endDate = $parameters['endDate'];
+    $imageUrl = $parameters['imageUrl'];
+    $user_email = $parameters['userEmail'];
+    $category = $parameters['category'];
 	$projectObject = new projectRequest($project_id, $school_id, $teacher_id, $title, $description, $startDate, $endDate, $imageUrl, $user_email, $category);
 	controller_UpdateProject($projectObject);
 }
 
 function AddCommMember($parameters)
 {
-	controller_AddCommMember($parameters->projectId, $parameters->userId);
+	controller_AddCommMember($parameters['projectId'], $parameters['userId']);
 }
 
 function ApproveProject($parameters)
 {
-	controller_ApproveProject($parameters->projectId);
+	controller_ApproveProject($parameters['projectId']);
 }
 
 function RejectProject($parameters)
 {
-	controller_RejectProject($parameters->projectId, $parameters->comment);
+	controller_RejectProject($parameters['projectId'], $parameters['comment']);
 }
 
 function GetAllUnapprovedProjects($parameters)
 {
-	controller_GetAllUnapprovedProjects($parameters->principalId);
+	controller_GetAllUnapprovedProjects($parameters['principalId']);
 }
 
 function GetAllProjectsForTeacher($parameters)
 {
-	controller_GetAllProjectsForTeacher($parameters->teacherId);
+	controller_GetAllProjectsForTeacher($parameters['teacherId']);
 }
 
 function GetAllProjectsForPrincipal($parameters)
 {
-	controller_GetAllProjectsForPrincipal($parameters->principalId);
+	controller_GetAllProjectsForPrincipal($parameters['principalId']);
 }
 
 function GetAllProjectsForCommunityMember($parameters)
 {
-	controller_GetAllProjectsForCommunityMember($parameters->communityMemberId);
+	controller_GetAllProjectsForCommunityMember($parameters['communityMemberId']);
 }
 
 function GetAllProjectsWhere($parameters)
 {
-	if (isset($parameters->school))
+	if (isset($parameters['school']))
 	{
-		$school = $parameters->school;
+		$school = $parameters['school'];
 	}
 	else
 	{
 		$school = null;
 	}
-	if (isset($parameters->teacher))
+	if (isset($parameters['teacher']))
 	{
-		$teacher = $parameters->teacher;
+		$teacher = $parameters['teacher'];
 	}
 	else
 	{
 		$teacher = null;
 	}
-	if (isset($parameters->title))
+	if (isset($parameters['title']))
 	{
-		$title = $parameters->title;
+		$title = $parameters['title'];
 	}
 	else
 	{
 		$title = null;
 	}
-	if (isset($parameters->subject))
+	if (isset($parameters['subject']))
 	{
-		$subject = $parameters->subject;
+		$subject = $parameters['subject'];
 	}
 	else
 	{
 		$subject = null;
 	}
 	
-	controller_GetAllProjectsWhere($parameters->query, $school, $teacher, $title, $subject);
+	controller_GetAllProjectsWhere($parameters['query'], $school, $teacher, $title, $subject);
 }
 
 function VetCommunityMember($parameters)
 {
-	controller_VetCommunityMember($parameters->communityMemberID);
+	controller_VetCommunityMember($parameters['communityMemberID']);
 }
 
 function GetSchool($parameters)
 {
-	controller_GetSchool($parameters->schoolId);
+	controller_GetSchool($parameters['schoolId']);
 }
 
 function GetAllSchools($parameters)
 {
-	controller_GetAllSchools($parameters->schoolBoardId);
+	controller_GetAllSchools($parameters['schoolBoardId']);
 }
 
 function GetProjectMembers($parameters)
 {
-	controller_GetProjectMembers($parameters->projectId);
+	controller_GetProjectMembers($parameters['projectId']);
 }
 
 function UpdateUser($parameters)
 {
-    $id = $parameters->id;
-	$school = $parameters->schoolId;
-	$userType = $parameters->userType;
-	$email = $parameters->email;
-	$password = $parameters->password;
-	$name = $parameters->name;
-	$title = $parameters->title;
-	$skills = $parameters->skills;
-	$isVetted = $parameters->isVetted;
-	$bio = $parameters->bio;
-	$associatedProjects = $parameters->associatedProjects;
-	$imageUrl = $parameters->imageUrl;
-    $username = $parameters->username;
+    $id = $parameters['id'];
+	$school = $parameters['schoolId'];
+	$userType = $parameters['userType'];
+	$email = $parameters['email'];
+	$password = $parameters['password'];
+	$name = $parameters['name'];
+	$title = $parameters['title'];
+	$skills = $parameters['skills'];
+	$isVetted = $parameters['isVetted'];
+	$bio = $parameters['bio'];
+	$associatedProjects = $parameters['associatedProjects'];
+	$imageUrl = $parameters['imageUrl'];
+    $username = $parameters['username'];
 	$userObject = new userRequest($id, $school, $userType, $email, $password, $name, $title, $skills, $isVetted, $bio, $associatedProjects, $imageUrl, $username);
 	controller_UpdateUser($userObject);
 }
