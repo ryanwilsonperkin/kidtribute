@@ -1,3 +1,10 @@
+// Update the project manager list to have the current user by default.
+$(document).ready(function() {
+    var user = getCurrentUser();
+    $('#projectManagerDefault').html('Me (' + user.name + ')');
+});
+
+
 // Attempts to create and submit the project. In case of an error when creating, an
 // error message is shown at the top of the create project page.
 var createProjectSubmit = function () {
@@ -26,7 +33,7 @@ var createProjectSubmit = function () {
         startDate: formatDate($('#projectStartDate').val()),
         endDate: null,
         imageUrl: null,
-        category: $('#projectCategory').val(),
+        category: $('#projectCategory').val().toLowerCase(),
         isApproved: false,
     };
 
