@@ -109,7 +109,7 @@ class project_model extends db
 			$project->startDate = "null";
 		
 		if ($project->endDate == null)
-			$project->endDate = "null";
+			$project->endDate = "2055-10-10";
 		
 		if ($project->imageUrl == null)
 			$project->imageUrl = "null";
