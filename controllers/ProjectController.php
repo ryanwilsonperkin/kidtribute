@@ -32,7 +32,13 @@ function controller_CreateProject($project)
 
     $projectDB = new projectDB(null, $project->schoolId, $project->userId, $category->category_id, $project->title, $project->description,
 							$project->startDate, $project->endDate, $project->imageUrl, 1);//assume its approved for the demo
-	$creationResponse = $project_model->create_project($projectDB);
+	$projectDB = $project_model->create_project($projectDB);
+	$category = $category_model->load($projectDB->category_id);//look up category name based on ->category_id //use category model
+        
+        $projectResponse = new projectRequest($projectDB->project_id, $projectDB->school_id, $projectDB->teacher_id, $projectDB->title,
+                                                                                  $projectDB->description, $projectDB->startDate, $projectDB->endDate, $projectDB->imageUrl,
+                                                                                  $user->email,$category->name);
+	
 	$responseObject = new ResponseObject("200", "OK", null, $creationResponse);
 	echo json_encode($responseObject);
 }
